@@ -31,12 +31,15 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.limpiarValores();
+  }
+
+  limpiarValores() {
     this.formulario.setValue({
       nombreArtista: '',
       wikiArtista: '',
       urlArtista: '',
     });
-
   }
 
   crearFormulario() {
@@ -62,8 +65,12 @@ export class AppComponent implements OnInit {
     };
 
     this.artistas.push( artista );
-    console.log(this.artistas);
+    this.limpiarValores();
 
+  }
+
+  eliminar( index: number ) {
+    this.artistas.splice( index, 1);
   }
 
 

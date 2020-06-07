@@ -48,10 +48,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let artista of artistas">
+      <tr *ngFor="let artista of artistas; let i = index">
         <td>{{artista?.nombre}}</td>
         <td>{{artista?.urlFoto}}</td>
         <td>{{artista?.urlWiki}}</td>
+        <td>
+          <button type="button" class="btn btn-danger btn-sm" (click)="eliminar(i)">Eliminar</button>
+        </td>
       </tr>
 
     </tbody>
